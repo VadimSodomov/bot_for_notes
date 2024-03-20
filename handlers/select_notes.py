@@ -29,9 +29,9 @@ def button_select_notes_from_category(callback: telebot.types.CallbackQuery):
         text = ""
         for i, c in enumerate(categories):
             if i == 0:
-                text += f"{get_rus_category(c)}:\n-"+"\n".join(all_notes[c])
+                text += f"{get_rus_category(c)}:\n- "+"\n- ".join(all_notes[c])
             else:
-                text += f"\n\n{get_rus_category(c)}:\n- " + "\n".join(all_notes[c])
+                text += f"\n\n{get_rus_category(c)}:\n- " + "\n- ".join(all_notes[c])
         bot.send_message(callback.message.chat.id, text=text, reply_markup=markup)
 
     else:
